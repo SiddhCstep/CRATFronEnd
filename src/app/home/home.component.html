@@ -1,0 +1,187 @@
+<div class="headerContener">
+     <div class="historicalFutureselection">
+          <div [formGroup]="radioForm" class="radio-inputs">
+               <label *ngFor="let option of optionsoftime" class="radio">
+                    <input type="radio" formControlName="selectedOption" [value]="option.value"
+                         (change)="onSelectionChange(option.value)">
+                    <span class="name">{{ option.label }}</span>
+               </label>
+          </div>
+          <div [formGroup]="radioForm" class="optionsoftypeoftime" *ngIf="showRCP">
+               <label *ngFor="let option of optionsoftypeoftime" class="radio-container">
+                    <input type="radio" formControlName="selectedOption" [value]="option.value"
+                         (change)="onSelectionChange(option.value)">
+                    <span class="radio-labeltime">{{ option.label }}</span>
+               </label>
+          </div>
+     </div>
+
+     <div class="mainheader">
+          <div class="logoimage">
+               <img src="../../assets/image/icon.png" alt="" width="50px">
+          </div>
+          <div class="logocontener">
+               <h2>CRAT</h2>
+               <p>Climate Risk Assessment Tool </p>
+          </div>
+          <div class="headercntent">
+               <div class="dropdown" [class.active]="isOpen" (click)="toggleDropdown()">
+                    <button class="dropdown-toggle">
+                         {{ selectedOption.label }} <span style="margin-left: 10px;"><img
+                                   src="../../assets/image/arrow-down-sign-to-navigate.png" alt=""
+                                   style="width: 15px;"></span>
+                    </button>
+                    <div class="dropdown-menu" *ngIf="isOpen">
+                         <div class="dropdown-item" *ngFor="let option of optionsofeffectedfield"
+                              (click)="selectOption(option)">
+                              {{ option.label }}
+                         </div>
+                    </div>
+               </div>
+               <a href="">Home</a>
+               <img src="../../assets/image/user.png" alt="" width="20px" class="usericon">
+          </div>
+     </div>
+</div>
+
+<div class="bodyContaner">
+     <div class="menucontaner">
+          <div class="menucontanerbox">
+               <div>
+                    <div class="hazards Button" (click)="toggleHazardsContent()">
+                         Hazards <span><img src="../../assets/image/arrow-down-sign-to-navigate (2).png" alt=""
+                                   width="15px"></span>
+                    </div>
+                    <div *ngIf="isHazardsContentVisible" class="hazardsContent">
+                         <div [formGroup]="radioForm">
+                              <label *ngFor="let option of hazardoptions" class="hazardsContentindi">
+                                   <input type="radio" formControlName="selectedOption" [value]="option.value"
+                                        (change)="onSelectionChangeHazards(option.value)">
+                                   <span class="radio-circle"></span>
+                                   <span class="radio-label">{{ option.label }}</span>
+                              </label>
+                         </div>
+                    </div>
+                    <div class="Exposure Button" (click)="toggleExposureContent()">
+                         Exposure <span><img src="../../assets/image/arrow-down-sign-to-navigate (1).png" alt=""
+                                   width="15px"></span>
+                    </div>
+
+
+
+
+                    <form [formGroup]="checkboxForm" *ngIf="isExposureContentVisible" class="hazardsContent">
+                         <div formArrayName="selectedOptionsForExposure">
+                              <label *ngFor="let option of Exposureoptions; let i = index" class="hazardsContentindi"
+                                   [ngClass]="{'checked': checkboxForm.get('selectedOptionsForExposure')?.value[i]}">
+                                   <div class="checboxdiv">
+                                        <input type="checkbox" [formControlName]="i"
+                                             (change)="onSelectionChangehazardoptions(i, $event)">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="radio-label">{{ option.label }}</span>
+                                   </div>
+                              </label>
+                         </div>
+                    </form>
+
+
+
+
+                    <div class="Vulnerability Button" (click)="toggleVulnerabilityContent()">
+                         Vulnerability <span><img src="../../assets/image/arrow-down-sign-to-navigatep.png" alt=""
+                                   width="15px"></span>
+                    </div>
+
+
+
+
+                    <form [formGroup]="checkboxFormVulnerability" *ngIf="isVulnerabilityContentVisible"
+                         class="scroble">
+                         <div formArrayName="selectedOptionsforVulnerability">
+                              <label *ngFor="let option of Vulnerabilityoptions; let i = index"
+                                   class="hazardsContentindi"
+                                   [ngClass]="{'checked': checkboxFormVulnerability.get('selectedOptionsforVulnerability')?.value[i]}">
+                                   <div class="checboxdiv">
+                                        <input type="checkbox" [formControlName]="i"
+                                             (change)="onSelectionChangeVulnerabilityoptions(i, $event)">
+                                        <span class="custom-checkbox"></span>
+                                        <span class="radio-label" [innerHTML]="option.label"></span>
+                                   </div>
+                              </label>
+                         </div>
+                    </form>
+               </div>
+
+               <div class="riskbuttoncontaner">
+                    <button class="showriskbutton" (click)="showriskbutton()" [disabled]="isButtonDisabled">
+                         Show Risk
+                       </button>
+               </div>
+          </div>
+     </div>
+     <div class="mapcontaner">
+
+          <div class="container">
+               <div class="row">
+                    <div class="box first" [class.expanded]="isExpanded('one')" (click)="expandBox('one')"
+                         *ngIf="!expandedBox || expandedBox === 'one'">
+
+                         <div style="height: 98%; width: 98%;" leaflet [leafletOptions]="optionsDisone">
+                         </div>
+
+                         <button *ngIf="expandedBox === 'one'" class="close-button"
+                              (click)="shrinkBox($event)">&#10006;</button>
+
+                         <div class="districtnamecontaner">
+
+                              Puducherry
+                         </div>
+                    </div>
+                    <div class="box second" [class.expanded]="isExpanded('two')" (click)="expandBox('two')"
+                         *ngIf="!expandedBox || expandedBox === 'two'">
+                         <div style="height: 98%; width: 98%;z-index: 1" leaflet [leafletOptions]="optionsDistwo">
+                         </div>
+                         <button *ngIf="expandedBox === 'two'" class="close-button"
+                              (click)="shrinkBox($event)">&#10006;</button>
+                              <div class="districtnamecontaner">
+                                   Karaikal
+                              </div>
+                    </div>
+               </div>
+
+
+               <div class="row">
+                    <div class="box first" [class.expanded]="isExpanded('three')" (click)="expandBox('three')"
+                         *ngIf="!expandedBox || expandedBox === 'three'">
+                         <div style="height: 98%; width: 98%;" leaflet [leafletOptions]="optionsDisthree">
+                         </div>
+
+
+
+
+
+                         <button *ngIf="expandedBox === 'three'" class="close-button"
+                              (click)="shrinkBox($event)">&#10006;</button>
+                              <div class="districtnamecontaner">
+                                   Yanam
+                              </div>
+                    </div>
+                    <div class="box second" [class.expanded]="isExpanded('four')" (click)="expandBox('four')"
+                         *ngIf="!expandedBox || expandedBox === 'four'">
+                         <div style="height: 98%; width: 98%; z-index: 1;" leaflet [leafletOptions]="optionsDisfour">
+                         </div>
+                         <button *ngIf="expandedBox === 'four'" class="close-button"
+                              (click)="shrinkBox($event)">&#10006;</button>
+                              <div class="districtnamecontaner">
+                                   Mahe
+                              </div>
+                    </div>
+               </div>
+
+
+          </div>
+
+
+
+     </div>
+</div>

@@ -1,0 +1,147 @@
+<header>
+  <div class="diveder" id="heading">
+    <img src="../../assets/image/icon.png" alt="" width="50px"><h2 >CRAT</h2>
+  </div>
+  <div class="diveder second">
+    <a href="#about" class="headeratag">About CRAT</a>
+    <a (click)="expandBox('login Form')"class="headeratag">Go to CRAT</a>
+    <a href="#footer" class="headeratag">Contact Us</a>
+  </div>
+</header>
+
+
+
+<div class="headerimage">
+  <div class="inner-content">
+    <h1>
+      Climate Risk Assessment Tool
+    </h1>
+
+    <!-- routerLink="/home" -->
+
+    <button class="cssbuttons-io-button" (click)="expandBox('login Form')">
+      Get started
+      <div class="icon">
+        <svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0h24v24H0z" fill="none"></path>
+          <path d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+            fill="currentColor"></path>
+        </svg>
+      </div>
+    </button>
+  </div>
+</div>
+
+
+
+<div class="overlay" *ngIf="expandedBox">
+  <div class="expanded-box">
+    <div class="form-container" *ngIf="loginform; else signup">
+      <p class="title">Welcome to CRAT
+      <form class="form">
+        <input type="email" class="input" placeholder="Email">
+        <input type="password" class="input" placeholder="Password">
+        <p class="page-link">
+          <span class="page-link-label">Forgot Password?</span>
+        </p>
+        <button class="form-btn" routerLink="/home">Log in</button>
+      </form>
+      <p class="sign-up-label">
+        Don't have an account?<a class="sign-up-link" (click)="toggleLoginForm()">Sign up</a>
+      </p>
+    </div>
+
+
+    
+    <ng-template class="form-container" #signup>
+      <p class="title">Resister Yourself
+      <form class="form">
+        <input type="email" class="input" placeholder="Email">
+        <input type="password" class="input" placeholder="Password">
+        <p class="page-link">
+          <span class="page-link-label">Forgot Password?</span>
+        </p>
+        <button class="form-btn" routerLink="/home">Log in</button>
+      </form>
+      <p class="sign-up-label">
+       I have an account<a class="sign-up-link" (click)="toggleLoginForm()">Log in</a>
+      </p>
+    </ng-template>
+    <button class="close-button" (click)="shrinkBox()">&#10006;</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="aboutSection" id="about">
+  <div class="aboutData">
+    <h2 id="heading">About</h2>
+    <div class="aboutdiscription">
+      <p>
+        Use CRAT to indentify which of your districts are most at risk to climate hazards such as floods, droughts,
+        heat-stress and sea-level rise.
+      </p>
+      <p>
+        Outputs from the tool can be used to priortize districts for investment in adaptation.
+      </p>
+    </div>
+  </div>
+  <div class="aboutimage">
+    <img src="../../assets/image/aboutImage.JPG" alt="" width="700px">
+  </div>
+</div>
+
+
+<footer id="footer">
+  <div class="footerdivider">
+    <h2 class="footerlogo">CRAT</h2>
+
+    <div class="footerAtag">
+      <a href="#about">About CRAT</a>
+      <a href="">Go To CRAT</a>
+      <a href="#footer">Contact Us</a>
+      <a href="">Terms and Conditions</a>
+      <a href="">privacy policy</a>
+    </div>
+    <div>
+    </div>
+  </div>
+
+
+  <div class="footerdivide">
+    <h5 class="footerlogo">Contact Us</h5>
+
+
+    <div>
+    </div>
+  </div>
+</footer>
+
+<div>
+  <!-- <app-pop-up></app-pop-up> -->
+</div>

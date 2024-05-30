@@ -1,0 +1,566 @@
+.headerContener {
+    width: 100%;
+    height: 80px;
+    display: flex;
+  }
+  
+  .historicalFutureselection {
+    width: 15%;
+    height: 80px;
+    background-color: #EEE;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .logoimage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 0.5rem;
+    background-color: #EEE;
+    box-sizing: border-box;
+    padding: 0.25rem;
+    font-size: 14px;
+  }
+  
+  .radio-inputs .radio {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  
+  .radio-inputs .radio input {
+    display: none;
+  }
+  
+  .radio-inputs .radio .name {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    border-radius: 0.5rem;
+    border: none;
+    padding: .5rem 0;
+    color: rgba(51, 65, 85, 1);
+    transition: all .15s ease-in-out;
+  }
+  
+  .radio-inputs .radio input:checked+.name {
+    background-color: #35605a;
+    font-weight: 600;
+    color: #EEE;
+  }
+  
+  
+  .optionsoftypeoftime{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .radio-container {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-container input[type="radio"] {
+    display: none;
+  }
+  
+  .radio-labeltime {
+    padding: 5px 15px;
+    font-size: 70%;
+    border: 2px solid white;
+    font-weight: bold;
+    background-color: white;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .radio-container:hover .radio-labeltime {
+    background-color: #f0f0f0; 
+  }
+  
+  
+  .radio-container input[type="radio"]:checked + .radio-labeltime {
+    background-color: #ffffff; 
+    color: #35605a; 
+  
+    border: 2px solid #35605a;
+  }
+  
+  
+  .radio-container input[type="radio"]:checked + .radio-labeltime {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .radio-label {
+    padding: 2px;
+    font-size: small;
+    font-weight: 500;
+    width: 75%;
+    background-color: transparent;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  
+  
+  .hazardsContentindi:hover .radio-label {
+    background-color: white;
+  }
+  
+  .hazardsContentindi input[type="radio"]:checked + .radio-circle + .radio-label {
+    background-color: rgb(255, 255, 255);
+    color: #284b47;
+  }
+
+  .hazardsContentindi .radio-label {
+    background-color: transparent;
+    color: initial;
+  }
+  
+  .hazardsContentindi.checked .radio-label {
+    background-color: rgb(255, 255, 255);
+    color: #284b47;
+  }
+  .mainheader {
+    width: 85%;
+    height: 80px;
+    display: flex;
+    margin-left: 5px;
+    background-color: #EEE;
+    border-radius: 5px;
+  }
+  
+  .logocontener {
+    width: 20%;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+  }
+  
+  h2 {
+    margin: 0px;
+  }
+  
+  p{
+    margin: 0px;
+    color: #464646;
+  }
+  .headercntent {
+    width: 85%;
+    height: 80px;
+    padding-right: 150px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .dropdown-toggle {
+    background-color: #35605a;
+    color: white;
+    width: 180px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .dropdown-toggle:hover {
+    background-color: #284b47;
+    cursor: pointer;
+  }
+  
+
+/* scrol feture apply  */
+
+  .scroble {
+    height: 250px; 
+    overflow-y: hidden; 
+    padding-right: 16px; 
+    box-sizing: content-box; 
+    transition: overflow-y 0.3s ease; 
+    position: relative; 
+}
+
+.scroble:hover {
+    overflow-y: auto; 
+}
+
+.scroble::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scroble::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.scroble::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+
+.scrobleInner {
+    margin-right: -8px; 
+    padding-right: 8px; 
+}
+
+/* scrol feture end  */
+
+  .dropdown-menu {
+    position: absolute;
+    z-index: 2;
+    margin-top: 5px;
+    top: 100%;
+    left: 0;
+    background-color: #35605a;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    color: #EEE;
+    font-weight: 500;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    animation: dropdownAnimationIn 0.3s ease;
+  }
+  
+  .dropdown:not(.active) .dropdown-menu {
+    animation: dropdownAnimationOut 0.3s ease;
+  }
+  
+  
+  @keyframes dropdownAnimationIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes dropdownAnimationOut {
+    0% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    100% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+  
+  
+  .dropdown-item {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dropdown-item:hover {
+    background-color: #284b47;
+  }
+  
+  a {
+    text-decoration-line: none;
+    font-weight: 500;
+    margin-left: 40px;
+    color: black;
+  }
+  
+  .usericon {
+    margin-left: 40px;
+    cursor: pointer;
+  }
+  .bodyContaner{
+    width: 100%;
+    height: 88vh;
+    display: flex;
+  }
+  
+  .menucontaner{
+    margin-top: 5px;
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    
+  }
+  
+  .showriskbutton {
+    background-color: #35605a;
+    color: white;
+    width: 180px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.showriskbutton:disabled {
+    background-color: #cccccc; 
+    color: #666666; 
+    cursor: not-allowed; 
+    opacity: 0.6; 
+}
+
+
+  .showriskbutton:hover{
+    background-color: #203f3b;
+  }
+  .menucontanerbox{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 5px;
+    background-color: #EEE;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  
+  .Button{
+    height: 25px;  
+    font-weight: 600;
+    margin-bottom: 5px;
+    width: 85%;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 5px;
+    background-color: #ffffff;
+  }
+  
+  .hazards{
+    color: #be2727;
+   
+  }
+  
+  .Exposure{
+    color: #ffa500;
+   
+  }
+  
+  .Vulnerability{
+    color: #800080;
+    
+  }
+  
+  
+  
+  .radio-circle {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 2px solid rgb(153, 153, 153);
+    background-color: transparent;
+    margin-right: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .checboxdiv{
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+  }
+  
+ 
+  .hazardsContent{
+    margin: 0px 0px 5px 0px;
+  }
+  .hazardsContentindi {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 30px;
+  }
+  
+  .hazardsContentindi input[type="radio"] {
+    display: none;
+  }
+
+ 
+
+  .hazardsContentindi input[type="radio"]:checked + .radio-circle {
+    background-color: #284b47;
+    border: 2px solid #284b47;
+  }
+  
+  
+  .hazardsContentindi {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+  }
+  
+  
+  .checboxdiv {
+    display: flex;
+    
+  }
+  
+  input[type="checkbox"] {
+    display: none;
+  }
+  
+  .custom-checkbox {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+  }
+  
+  input[type="checkbox"]:checked + .custom-checkbox {
+    background-color: #284b47;
+    border-color: #284b47;
+  }
+  
+  input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    width: 2px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+  
+  
+  
+  
+  .riskbuttoncontaner{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .mapcontaner{
+    width: 85%;
+    height: 88vh;
+    /* border: 2px solid green; */
+    padding-left: 5px;
+    display: flex;
+  }
+  
+  .container {
+    display: flex;
+    height: auto;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .row{
+   width: 100%;
+   display: flex;
+  }
+  
+  .second{
+    margin-left: 5px;
+  }
+  .Second-first, .Second-second{
+    margin-top: 5px;
+  }
+  .box {
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 50%;
+    height: 43vh;
+    background-color: #EEE;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: relative; /* Make .box the containing block for absolute positioning */
+    transition: width 0.5s ease, height 0.5s ease;
+  }
+  
+  .box.expanded {
+    width: 100%;
+    height: 88vh;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 2;
+  }
+
+  .districtnamecontaner {
+    position: absolute; /* Position relative to the containing .box element */
+    bottom: 2px; /* 10px from the bottom of .box */
+    right: 5px; /* 10px from the right of .box */
+    height: 20px; /* Fixed height */
+    width: 100px; /* Fixed width */
+    background-color: white; /* Background color */
+   
+    z-index: 1000; /* Ensure it is on top of other elements within .box */
+    display: flex; /* Center content */
+    align-items: center; /* Center content vertically */
+    justify-content: center; /* Center content horizontally */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  }
+
+  
+  /* #map{
+    width: 600px !important;
+    height: 300px !important;
+  } */
